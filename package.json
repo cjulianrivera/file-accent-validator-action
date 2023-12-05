@@ -1,16 +1,22 @@
 {
   "name": "file-accent-validator-action",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.3",
+  "description": "Reads a file and validates that it does contain accents",
+  "repository": "cjulianrivera/file-accent-validator-action",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard --fix index.js",
+    "build": "ncc build index.js",
+    "version": "npm run build && git add dist",
+    "release": "np && git tag -f v1 && git push --tags -f"
+  },
+  "np": {
+    "publish": false
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Julian Rivera <cjulianrivera>",
+  "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0"
+    "@actions/core": "^1.10.1"
   }
 }

@@ -18,7 +18,12 @@ const main = async () => {
 
     let content = await fs.readFile(path, encoding);
     let re = new RegExp(regex);
-    setOutput('valid', re.test(content));
+    console.log(`content:${content}`);
+    let valid = re.test(content);
+    core.setOutput('valid', valid);
+    if (!valid)
+        core.setFailed(`The file ${path} contains invalid characters`);
+
 };
 
 main().catch(err => {
