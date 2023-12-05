@@ -17,8 +17,10 @@ const main = async () => {
         regex = '[áéíóúÁÉÍÓÚñÑ]';
 
     let content = await fs.readFile(path, encoding);
+    console.log(`content:${content}`);
     let re = new RegExp(regex);
-    setOutput('valid', re.test(content));
+    let valid = re.test(content);
+    core.setOutput('valid', valid);
 };
 
 main().catch(err => {
