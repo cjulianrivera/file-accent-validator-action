@@ -1,5 +1,8 @@
 name: Accent mark validator
 description: 'Validates that all accent marks are correct'
+branding:
+  icon: 'file'
+  color: 'purple'
 inputs:
   path:
     description: 'Path to the file to validate'
@@ -16,5 +19,5 @@ outputs:
   valid:
     description: 'Whether the file is valid or not'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
