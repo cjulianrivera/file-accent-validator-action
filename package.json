@@ -1,6 +1,6 @@
 {
   "name": "file-accent-validator-action",
-  "version": "1.3",
+  "version": "1.4",
   "description": "Reads a file and validates that it does contain accents",
   "repository": "cjulianrivera/file-accent-validator-action",
   "main": "index.js",

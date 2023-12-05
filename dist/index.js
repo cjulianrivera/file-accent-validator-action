@@ -26594,9 +26594,7 @@ const { promises: fs } = __nccwpck_require__(7147)
 
 const main = async () => {
     const path = core.getInput('path');
-    console.log(`path:${path}`);
     const encoding = core.getInput('encoding');
-    console.log(`encodig:${encoding}`);
     const regex = core.getInput('regex');
     console.log(`regex:${regex}`);
 
@@ -26607,7 +26605,6 @@ const main = async () => {
 
     let content = await fs.readFile(path, encoding);
     let re = new RegExp(regex);
-    console.log(`content:${content}`);
     let valid = re.test(content);
     core.setOutput('valid', valid);
     if (!valid)
