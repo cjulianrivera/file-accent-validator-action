@@ -1,10 +1,15 @@
-import core from '@actions/core';
-const { promises: fs } = require('fs');
+'use strict'
 
-try {
+const core = require('@actions/core')
+const { promises: fs } = require('fs')
+
+const main = async () => {
     const path = core.getInput('path');
+    console.log(`path:${path}`);
     const encoding = core.getInput('encoding');
+    console.log(`encodig:${encoding}`);
     const regex = core.getInput('regex');
+    console.log(`regex:${regex}`);
 
     if (encoding == undefined)
         encoding = 'utf8';
@@ -13,7 +18,9 @@ try {
 
     let content = await fs.readFile(path, encoding);
     let re = new RegExp(regex);
-    core.setOutput('valid', re.test(content));
-} catch (error) {
-    core.setFailed(error.message);
-}
+    setOutput('valid', re.test(content));
+};
+
+main().catch(err => {
+    core.setFailed(err.message)
+});
