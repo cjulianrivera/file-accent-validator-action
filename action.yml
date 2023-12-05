@@ -1,5 +1,8 @@
 name: Accent mark validator
 description: 'Validates that all accent marks are correct'
+branding:
+  icon: 'file'
+  color: 'purple'
 inputs:
   path:
     description: 'Path to the file to validate'
