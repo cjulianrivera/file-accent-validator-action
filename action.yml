@@ -1,0 +1,20 @@
+name: Accent mark validator
+description: 'Validates that all accent marks are correct'
+inputs:
+  path:
+    description: 'Path to the file to validate'
+    required: true
+  encoding:
+    description: 'Encoding of the file to validate (default: utf-8)'
+    required: false
+    default: 'utf-8'
+  regex:
+    description: 'Regex to validate the file (default: [áéíóúÁÉÍÓÚñÑ])'
+    required: false
+    default: '[áéíóúÁÉÍÓÚñÑ]'
+outputs:
+  valid:
+    description: 'Whether the file is valid or not'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
